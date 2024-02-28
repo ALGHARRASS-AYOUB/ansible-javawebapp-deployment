@@ -1,0 +1,6 @@
+---
+- name: Clone web application repository
+  git:
+    repo: "{{ web_app_repo_url }}"
+    dest: "{{ web_app_install_dir }}"
+    version: master

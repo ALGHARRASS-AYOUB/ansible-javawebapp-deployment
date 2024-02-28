@@ -1,0 +1,6 @@
+---
+- name: Configure Nginx
+  template:
+    src: "{{ nginx_config_template }}"
+    dest: /etc/nginx/sites-available/{{ web_app_name }}
+  notify: restart_nginx

@@ -1,0 +1,20 @@
+- name: "create group {{ group_tomcat }}"
+  import_tasks: create_group_tomcat.yaml
+
+- name: "create user {{ user_tomcat }}"
+  import_tasks: create_user_tomcat.yaml
+
+- name: create working directory
+  import_tasks: create_workdir.yaml
+
+- name: download & install & configure the service tomcat
+  import_tasks: download_extract_tomcat.yaml
+
+- name: Copy tomcat service file
+  import_tasks: copy_tomcat_template_service.yaml
+
+- name: enable and start tomcat
+  import_tasks: enable_start_tomcat_service.yaml
+
+- name: deployment of the app
+  import_tasks: deploy_app.yaml

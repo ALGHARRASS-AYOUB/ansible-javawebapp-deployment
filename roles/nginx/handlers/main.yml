@@ -1,0 +1,4 @@
+---
+# handlers file for nginx
+- name: restart nginx service
+  import_tasks: restart_nginx.yaml

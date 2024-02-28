@@ -1,0 +1,12 @@
+---
+# vars file for nginx
+# Variables for deploying the web application
+web_app_name: myapp
+web_app_repo_url: https://github.com/microsoft/project-html-website.git
+web_app_install_dir: /var/www/html/{{ web_app_name }}
+
+# Variables for Nginx configuration
+nginx_config_template: nginx.conf.j2
+nginx_server_name: nginx-server
+nginx_listen_port: 80
+nginx_document_root: "{{ web_app_install_dir }}"

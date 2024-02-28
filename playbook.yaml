@@ -1,22 +1,29 @@
 ---
-- name: Install Java
+- name: install nginx and deploy the frontend application  
+  hosts: webserver
+  become: yes
+  roles:
+    - 'roles/nginx'
+
+
+- name: Install Java on webserver and dbserver
   hosts: all
   become: yes
   roles:
-    - java
+    - 'roles/java'
 
-- name: install tomcat
+- name: install tomcat and deploy the application on webserver
   hosts: webserver
   become: yes
   roles:
     - tomcat   
 
-- name: install mysql
+- name: install mysql , deploy and restore the database
   hosts: db
   become: yes
   vars_files:
-    - "./mysql/vars/info_db.yaml"
+    - "./roles/mysql/vars/info_db.yaml"
   roles:
-    - mysql 
+    - 'roles/mysql' 
 
   

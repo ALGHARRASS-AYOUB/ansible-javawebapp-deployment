@@ -1,0 +1,12 @@
+---
+- name: install git
+  import_tasks: install_git.yaml
+- name: clone the application from github
+  import_tasks: clone_from_git.yaml
+- name: install nginx
+  import_tasks: install_nginx.yaml
+- name: configure nginx
+  import_tasks: configure_nginx.yaml
+- name: copy the application to nginx
+  import_tasks: enable_site.yaml
+

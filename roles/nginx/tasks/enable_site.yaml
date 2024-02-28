@@ -1,0 +1,7 @@
+---
+- name: Enable site in Nginx
+  file:
+    src: "/etc/nginx/sites-available/{{ web_app_name }}"
+    dest: "/etc/nginx/sites-enabled/{{ web_app_name }}"
+    state: link
+  notify: restart_nginx

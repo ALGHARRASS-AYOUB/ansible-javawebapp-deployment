@@ -1,0 +1,10 @@
+---
+# Copying the tomcat template file to the destination node
+- name: Copy tomcat service file
+  template:
+    src: "{{ tomcat_service_template }}"
+    dest: "{{ tomcat_service }}"
+    mode: 0774
+  when: ansible_service_mgr == "{{ system_daemon_os }}"
+  become: yes
+  become_method: sudo
