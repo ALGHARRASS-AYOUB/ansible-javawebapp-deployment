@@ -1,0 +1,11 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install OpenJDK Java
+  apt:
+    name: "{{ java_package_name }}"
+    state: present
+  become: yes

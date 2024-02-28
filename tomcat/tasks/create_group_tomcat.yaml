@@ -1,0 +1,6 @@
+---
+- name: "create group {{ tomcat_group }}"
+  group:
+    name: "{{ tomcat_group }}" # required. Name of the group to manage.
+    state: present # not required. choices: absent;present. Whether the group should be present or not on the remote host.
+    

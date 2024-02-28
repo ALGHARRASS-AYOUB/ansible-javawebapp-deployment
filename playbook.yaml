@@ -1,0 +1,22 @@
+---
+- name: Install Java
+  hosts: all
+  become: yes
+  roles:
+    - java
+
+- name: install tomcat
+  hosts: webserver
+  become: yes
+  roles:
+    - tomcat   
+
+- name: install mysql
+  hosts: db
+  become: yes
+  vars_files:
+    - "./mysql/vars/info_db.yaml"
+  roles:
+    - mysql 
+
+  

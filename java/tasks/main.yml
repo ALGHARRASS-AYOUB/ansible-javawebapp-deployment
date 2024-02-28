@@ -1,0 +1,6 @@
+---
+- name: update apt cache
+  import_tasks: update_cache.yaml
+- name: install java if not exists
+  include_tasks: install.yaml
+  when: not  java_already_installed 

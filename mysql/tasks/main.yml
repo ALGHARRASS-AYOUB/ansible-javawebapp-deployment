@@ -1,0 +1,13 @@
+---
+- name: install mysql dependancies
+  include_tasks: install_dependancies_mysql.yaml
+- name: create mysql user
+  include_tasks: create_mysql_user.yaml
+- name: create mysql db
+  include_tasks: create_mysql_db.yaml
+- name: enable the remote connection to the  mysql
+  include_tasks: enable_remote_connection.yaml
+- name: copy the sql dump
+  include_tasks: copy_db.yaml
+- name: restore the sql db
+  include_tasks: restore_db.yaml

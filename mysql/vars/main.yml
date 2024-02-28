@@ -1,0 +1,5 @@
+---
+# - include_vars: info_db_pt.yaml
+#db_name: mysqldb
+#db_user: root
+#db_password: root

@@ -1,0 +1,6 @@
+---
+# handlers file for mysql
+- name: start_mysql
+  import_tasks: start_mysql.yaml
+- name: restart_mysql
+  import_tasks: restart_mysql.yaml

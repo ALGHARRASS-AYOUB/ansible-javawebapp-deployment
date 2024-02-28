@@ -1,0 +1,6 @@
+
+# tasks file for /etc/ansible/roles/java_installation
+- import_tasks: java_exist.yaml
+- name: import task of installation
+  import_tasks: java_installation.yaml
+  when: usr_bin_java.stat.exists == false

@@ -1,0 +1,8 @@
+- name: Restore database
+  mysql_db:
+    name: "{{ db_name }}"
+    state: import
+    target: "/tmp/{{ db_name }}.sql"
+    #login_user: "{{ db_user }}"
+    #login_password: "{{ db_password }}"
+    #login_host: 10.0.1.156

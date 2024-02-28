@@ -1,0 +1,12 @@
+- name: Update all Ubuntu packages
+  apt:
+    upgrade: "dist"
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install required Ubuntu packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - default-jre

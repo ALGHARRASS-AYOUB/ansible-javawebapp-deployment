@@ -1,0 +1,8 @@
+---
+- name: "deploy the webapp  "
+  ansible.builtin.copy: 
+    src: "{{ webapp_war_file_location }}"
+    dest: "{{ webapp_deployment_tomcat_location }}"
+    owner: "{{ tomcat_user }}"
+    group: "{{ tomcat_group }}"
+    

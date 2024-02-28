@@ -1,0 +1,3 @@
+java_package_name: default-jre
+JAVA_HOME: /usr/bin/java
+java_already_installed: "{{ java_installed.stat.exists | default(false) }}"

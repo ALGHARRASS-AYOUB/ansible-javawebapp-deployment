@@ -1,0 +1,13 @@
+---
+- name: "create user {{ tomcat_user }}"
+  user:
+    name:  "{{ tomcat_user }}"
+    group: "{{ tomcat_group }}" # not required. Optionally sets the user's primary group (takes a group name).
+    password: "{{ tomcat_password | password_hash('sha512')  }}"
+    groups:  # not required. List of groups user will be added to. When set to an empty string C(''), the user is removed from all groups except the primary group. Before Ansible 2.3, the only input format allowed was a comma separated string. Mutually exclusive with C(local)
+    append: False # not required. If C(yes), add the user to the groups specified in C(groups). If C(no), user will only be added to the groups specified in C(groups), removing them from all other groups. Mutually exclusive with C(local)
+    home: /usr/share/tomcat # not required. Optionally set the user's home directory.
+    state: present # not required. choices: absent;present. Whether the account should exist or not, taking action if the state is different from what is stated.
+    create_home: no # not required. Unless set to C(no), a home directory will be made for the user when the account is created or if the home directory does not exist. Changed from C(createhome) to C(create_home) in Ansible 2.5.
+  become: yes
+  become_method: sudo

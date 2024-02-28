@@ -1,0 +1,19 @@
+---
+tomcat_user: "tomcat"
+tomcat_group: "tomcat"
+tomcat_password: "tomcat"
+
+tomcat_version: "apache-tomcat-10.1.19.tar.gz"
+tomcat_folder: /usr/share/tomcat/
+tomcat_url: "https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.tar.gz"
+
+tomcat_download_dest: "{{ tomcat_folder }}{{ tomcat_version }}"
+#webapp_war_file_location: "/etc/ansible/app/ravdy-hello-world-maven/webapp/target/webapp.war"
+#webapp_deployment_tomcat_location: "/usr/share/tomcat/webapps/webapp.war"
+webapp_war_file_location: "/etc/ansible/app/LoginWebApp/target/LoginWebApp.war"
+webapp_deployment_tomcat_location: "/usr/share/tomcat/webapps/LoginWebApp.war"
+
+system_daemon_os: systemd
+
+tomcat_service: /etc/systemd/system/tomcat.service
+tomcat_service_template: /etc/ansible/tomcat/templates/tomcat.service.j2

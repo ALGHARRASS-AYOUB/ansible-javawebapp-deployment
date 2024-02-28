@@ -1,0 +1,3 @@
+---
+- name: start_tomcat
+  import_tasks: start_tomcat.yml

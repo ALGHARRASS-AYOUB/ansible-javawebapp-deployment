@@ -1,0 +1,9 @@
+---
+- name: Check if Java is installed
+  stat:
+    path: "{{ JAVA_HOME }}"
+  register: java_installed
+
+- name: Set fact if Java is installed
+  set_fact:
+    java_already_installed: "{{ java_installed.stat.exists | default(false) }}"

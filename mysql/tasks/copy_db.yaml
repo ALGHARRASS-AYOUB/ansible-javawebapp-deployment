@@ -1,0 +1,4 @@
+- name: Copy database dump file
+  copy:
+    src: "/etc/ansible/db/{{ db_name }}.sql"
+    dest: /tmp

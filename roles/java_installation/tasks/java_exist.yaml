@@ -1,0 +1,4 @@
+- name: check java existence
+  stat: 
+    path: /usr/bin/java
+  register:   usr_bin_java
